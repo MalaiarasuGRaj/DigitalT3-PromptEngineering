@@ -8,7 +8,11 @@
 
 MAL.AI bridges the gap between users and personalized learning by leveraging AI to create dynamic lessons and quizzes tailored to individual learning preferences and time constraints. Whether you're a beginner or an expert, MAL.AI adapts to your needs.
 
-Try it here: [MAL.AI Web App](https://malai.wegic.app/home)
+**Try it here**: [MAL.AI Web App](https://malai.wegic.app/home)
+
+![Launch Page](https://drive.google.com/file/d/1zrZQZFrW6AQVBt7z8sopP4Owf4JXFA9R/view?usp=sharing)
+
+![MAL.AI Tool](https://drive.google.com/file/d/1CcFGagx037y-fycGiDkDwL0STLvm7KDy/view?usp=sharing)
 
 ---
 
