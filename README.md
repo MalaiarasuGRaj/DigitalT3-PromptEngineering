@@ -62,7 +62,7 @@ The MAL.AI interface consists of two main sections:
 - Provides a download link for the generated PDF content (if successful).
 
 ### 5. Generated Content
-## After processing:
+After processing:
 
 - The lesson or quiz will be displayed on the screen.
 - You can download the generated content as a PDF for offline use.
