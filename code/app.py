@@ -142,10 +142,11 @@ genai.configure(api_key=api_key)
 # Function to generate content using Gemini API
 def generate_content(topic, familiarity, learning_mode, time_available, uploaded_files, additional_instructions):
     if learning_mode == "Lesson":
-        prompt = f"Create a comprehensive lesson for a {familiarity} level learner on '{topic}', tailored to be completed within {time_available} minutes. Include engaging storytelling, relatable examples, and visual aids to maintain interest and motivation. Consider {additional_instructions}. Recommend 2-3 high-quality, free online courses and 1-2 relevant projects for practical experience."
+        prompt = f"As an experienced educator, craft a detailed and engaging lecture on '{topic}' for a {familiarity} level learner. Your role is to guide the learner through the topic in a way that makes it easy to understand within {time_available} minutes. Provide clear explanations using storytelling and relatable real-world examples. Contextualize the information with practical applications, and keep the learner motivated throughout. Additionally, recommend 2-3 free, high-quality online courses and 1-2 projects for practical application. {additional_instructions} should also be incorporated to enhance the learning experience."
 
     elif learning_mode == "Quiz":
-        prompt = f"Create a comprehensive quiz for a {familiarity} level learner on '{topic}', tailored to be completed within {time_available} minutes. Include a mix of multiple-choice, true/false, and short-answer questions. Provide clear instructions and explanations for each question, and include feedback for correct and incorrect answers. Consider {additional_instructions}."
+        prompt = f"As an experienced educator, create a comprehensive quiz on '{topic}' for a {familiarity} level learner. Your role is to assess the learner's understanding through multiple-choice, true/false, and short-answer questions. Clearly explain each question with instructions and context. Provide immediate feedback on correct and incorrect answers to enhance the learning process. Ensure the quiz can be completed within {time_available} minutes and consider {additional_instructions} to tailor the assessment effectively."
+
 
     if uploaded_files:
         prompt += f" Use the following content for reference: {uploaded_files}"
