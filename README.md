@@ -34,3 +34,4 @@ QuiZenius AI is an AI-powered learning assistant developed using Streamlit that 
 - Experiment with different familiarity levels and learning modes to see variations in generated content.
 - Upload relevant PDFs to enhance the learning experience with additional references.
 - Use the "Additional Instructions" section to tailor the output to your learning objectives.
+- Select your preferred language to learn in a comfortable and familiar medium.
