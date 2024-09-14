@@ -8,6 +8,8 @@
 
 QuiZenius AI is an AI-powered learning assistant developed using Streamlit that allows users to generate personalized lessons and quizzes based on a chosen topic, familiarity level, and available time. The system is integrated with Meta's LLaMA model and SambaNova Cloud for optimal language model performance. Users can upload reference materials in PDF format and download customized study materials for offline use.
 
+![QuiZenius AI Interface](https://drive.google.com/uc?export=view&id=1YLUVLQsmfa07u0AQxvvim9cd3GgnkOn_)
+
 ---
 
 ## 🚀 Features
