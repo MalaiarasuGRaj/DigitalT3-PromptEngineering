@@ -14,7 +14,7 @@ QuiZenius AI is an AI-powered learning assistant developed using Streamlit that 
 
 - **Personalized Learning Plans**: Generate lessons or quizzes based on your topic, familiarity level, and available time.
 - **Content Extraction**: Upload PDFs and extract text and images for enhanced learning experiences.
-- **AI-Powered Content Generation**: Using the Google Gemini API, MAL.AI creates engaging lessons and quizzes.
+- **AI-Powered Content Generation**: Using the Google Gemini API, QuiZenius AI creates engaging lessons and quizzes.
 - **PDF Download**: Generate custom PDFs of the generated content for offline study.
 - **Streamlined User Interface**: Simple and intuitive design built with Streamlit for ease of use.
 
@@ -26,7 +26,7 @@ QuiZenius AI is an AI-powered learning assistant developed using Streamlit that 
 - **Learning Mode:** Choose between a Lesson or a Quiz mode.
 - **Time Limit:** Set the amount of time you have for the content (in minutes).
 - **Upload PDF:** Optionally, upload reference PDFs for additional context.
-- **Additional Instructions:** Optionally, provide extra instructions for MAL.AI.
+- **Additional Instructions:** Optionally, provide extra instructions for QuiZenius AI.
 - **Generate Content:** Click the "Generate Content" button to start processing.
 
 
