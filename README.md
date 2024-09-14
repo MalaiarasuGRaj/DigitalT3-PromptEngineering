@@ -2,7 +2,7 @@
 #### Smart Learning, Enhanced by AI 📚🤖  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-MalaiarasuGRaj-blue)](https://www.linkedin.com/in/malaiarasu-g-raj-38b695252/)  
-[![GitHub](https://img.shields.io/github/followers/MalaiarasuGRaj?style=social)](https://github.com/MalaiarasuGRaj)  
+[![GitHub](https://img.shields.io/github/followers/MalaiarasuGRaj?style=social)](https://github.com/MalaiarasuGRaj)
 
 ---
 
