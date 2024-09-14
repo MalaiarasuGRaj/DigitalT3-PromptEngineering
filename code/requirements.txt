@@ -6,7 +6,7 @@ langchain==0.2.11
 python-dotenv==1.0.0
 Requests==2.31.0
 sseclient-py==1.8.0
-streamlit==1.25.0
+streamlit==1.38.0
 streamlit-extras==0.3.6
 pytesseract==0.3.13
 pymupdf==1.24.10
