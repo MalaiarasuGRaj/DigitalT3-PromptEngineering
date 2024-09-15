@@ -34,8 +34,7 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
    git clone https://github.com/MalaiarasuGRaj/DigitalT3-PromptEngineering
    cd prompt_engineering
    python3 -m venv prompt_engineering_env
-   source prompt_engineering_env/bin/activate
-
+   source prompt_engineering_env/bin/activate\
 
 2. **Install Dependencies:** Make sure you have all the required packages installed:
     ```bash
