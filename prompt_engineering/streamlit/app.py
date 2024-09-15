@@ -4,6 +4,7 @@ import logging
 import re
 import io
 from PIL import Image
+import pytesseract
 import fitz  # PyMuPDF
 
 # Setting up directories and paths
@@ -35,18 +36,33 @@ def call_api(llm_manager: LLMManager, prompt: str, llm_expert: str) -> str:
 
 
 def extract_pdf_content(pdf_files):
-    """Extract text from PDF files without processing images."""
+    """Extract text and images from PDF files."""
     combined_text = ""
     for pdf_file in pdf_files:
         try:
             doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
             text = ""
+            image_text = ""
 
             for page_num in range(len(doc)):
                 page = doc.load_page(page_num)
                 text += page.get_text()
 
-            combined_text += text
+                images = page.get_images(full=True)
+                for img in images:
+                    xref = img[0]
+                    base_image = doc.extract_image(xref)
+                    image_bytes = base_image["image"]
+                    image = Image.open(io.BytesIO(image_bytes))
+
+                    try:
+                        image_text += pytesseract.image_to_string(image)
+                    except pytesseract.TesseractNotFoundError as e:
+                        logging.error(f"Tesseract not found: {e}")
+                    except Exception as e:
+                        logging.error(f"Error processing image: {e}")
+
+            combined_text += text + " " + image_text
         except Exception as e:
             logging.error(f"Error extracting PDF content: {e}")
     return combined_text
