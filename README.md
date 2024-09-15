@@ -31,7 +31,7 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
 ## 🚀 How to Run the Project
 1. **Clone the Repository:**
    ```bash
-   git clone <https://github.com/MalaiarasuGRaj/DigitalT3-PromptEngineering>
+   git clone https://github.com/MalaiarasuGRaj/DigitalT3-PromptEngineering
    cd prompt_engineering
 
 
