@@ -1,0 +1,19 @@
+# Set the maximum line length to 120
+line-length = 120
+
+# Additional file extensions
+extend-include = ["*.ipynb"]
+
+[lint]
+# Add the flake8-annotations rules
+select = ["ANN"]
+
+# Exclude checks that function arguments are annotated with a more specific type than Any
+ignore = ["ANN401", "ANN101"]
+
+# Add the `line-too-long` and the `unused-import` rules to the enforced rule set
+extend-select = ["E501", "F401"]
+
+[format]
+# Use single quotes for non-triple-quoted strings
+quote-style = "single"
