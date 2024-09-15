@@ -284,7 +284,6 @@ def main():
 
     # Display the generated content if it exists
     if st.session_state.generated_content:
-        st.markdown("### Generated Content")
         st.write(st.session_state.generated_content)
 
         # After content generation, allow the user to input doubts
@@ -294,11 +293,9 @@ def main():
         # Button to submit the doubt
         if st.button("Submit Doubt"):
             if user_doubt:
-                # Prompt for model to answer the user's doubt
-                doubt_prompt = f"As an AI assistant, answer this question based on the previous content: '{user_doubt}'"
+                doubt_prompt = f"Answer this question based on the content: '{user_doubt}'"
                 doubt_response = call_api(llm_manager, doubt_prompt, llm_info["select_expert"])
 
-                # Store the question and answer in session state
                 st.session_state.questions.append(user_doubt)
                 st.session_state.answers.append(doubt_response)
             else:
@@ -306,7 +303,6 @@ def main():
 
     # Display the questions and answers in chat format
     if st.session_state.questions:
-        st.markdown("### Chat History")
         for i in range(len(st.session_state.questions)):
             st.write(f"**You:** {st.session_state.questions[i]}")
             st.write(f"**QuiZenius AI:** {st.session_state.answers[i]}")
