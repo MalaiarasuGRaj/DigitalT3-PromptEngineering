@@ -56,16 +56,16 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
 ## 💡 How to Use the Tool
 1. Input your Preferences:
 
-- Choose a topic, set your familiarity level, select a learning mode (Lesson or Quiz), and specify the available time.
-- You can optionally upload PDFs as reference material for more tailored content generation.
+   - Choose a topic, set your familiarity level, select a learning mode (Lesson or Quiz), and specify the available time.
+   - You can optionally upload PDFs as reference material for more tailored content generation.
 
 2. Generate Content:
 
-- Once all required fields are filled, click the "Generate Content" button to produce lessons or quizzes.
+   - Once all required fields are filled, click the "Generate Content" button to produce lessons or quizzes.
 
 3. Customize the Output:
 
-- The generated content can be customized further by specifying additional instructions or selecting a preferred language.
+   - The generated content can be customized further by specifying additional instructions or selecting a preferred language.
 
 ## 🛠 Technology Stack
 - Frontend: Streamlit
