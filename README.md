@@ -12,6 +12,26 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
 - **Interactive Interface:** Streamlit-based user interface with customizable themes and responsive design.
 - **Multiple Input Options:** Supports text input, familiarity levels, learning modes, and optional file uploads (PDFs) for enhanced reference material.
 
+## ✨ Enhancing Learning with the RACE Prompting Technique
+
+QuiZenius AI uses the **RACE Technique** to generate personalized lessons or quizzes. This technique ensures that prompts are detailed, engaging, and tailored to each user’s learning needs and constraints.
+
+### RACE Technique in Action
+- **Role**: The platform acts as an experienced educator, ensuring that content is delivered clearly and effectively, tailored to the user’s learning needs.
+
+- **Action**: QuiZenius AI crafts detailed prompts, guiding the creation of well-structured lessons or quizzes. These prompts motivate learners, keeping them engaged while matching their familiarity level and time constraints.
+
+- **Context**: Whether generating content for a beginner or an advanced learner, the RACE technique ensures the lessons or quizzes fit the time available and incorporate any additional materials (e.g., PDFs).
+
+- **Example**:
+
+   - **For a Lesson**:  
+     "Explain the key concepts of the topic clearly to a learner with intermediate knowledge. Use real-life examples and aim to complete the lesson within 15 minutes. Provide links to two recommended resources for further study."
+
+   - **For a Quiz**:  
+     "Create a 10-question quiz to test understanding of the topic. Include multiple-choice, true/false, and short-answer questions. Offer feedback after each question and ensure the quiz can be completed within 10 minutes."
+
+
 ## 🔧 Key Modifications from the Base Code
 1. **Config File Adjustments:** 
    - Updated `config.yaml` to enhance the use case.
@@ -58,6 +78,7 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
 5. **Access the Application:** The application will be available at http://localhost:8501.
 
 ## 💡 How to Use the Tool
+
 1. Input your Preferences:
 
    - Choose a topic, set your familiarity level, select a learning mode (Lesson or Quiz), and specify the available time.
