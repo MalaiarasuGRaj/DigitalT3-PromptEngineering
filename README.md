@@ -12,7 +12,7 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
 - **Interactive Interface:** Streamlit-based user interface with customizable themes and responsive design.
 - **Multiple Input Options:** Supports text input, familiarity levels, learning modes, and optional file uploads (PDFs) for enhanced reference material.
 
-## ✨ Enhancing Learning with the RACE Prompting Technique
+## 💡 Enhancing Learning with the RACE Prompting Technique
 
 QuiZenius AI uses the **RACE Technique** to generate personalized lessons or quizzes. This technique ensures that prompts are detailed, engaging, and tailored to each user’s learning needs and constraints.
 
