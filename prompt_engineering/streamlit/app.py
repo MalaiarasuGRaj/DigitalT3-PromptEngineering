@@ -78,6 +78,16 @@ def clean_text(text):
 
 
 def main():
+    # Initialize session state for content, questions, and answers if not already initialized
+    if 'generated_content' not in st.session_state:
+        st.session_state.generated_content = ""
+    if 'questions' not in st.session_state:
+        st.session_state.questions = []
+    if 'answers' not in st.session_state:
+        st.session_state.answers = []
+    if 'generate_content' not in st.session_state:
+        st.session_state.generate_content = False
+
     # Streamlit page configuration
     st.set_page_config(page_title='QuiZenius AI', layout="centered", initial_sidebar_state="expanded",
                        menu_items={'Get help': 'https://github.com/sambanova/ai-starter-kit/issues/new'})
@@ -237,27 +247,16 @@ def main():
                 </script>
             """, unsafe_allow_html=True)
 
-            # Generate button
-            generate_button = st.button("Generate Content")
+            # Button to generate content
+            st.session_state.generate_content = st.button("Generate Content", type="primary")
 
-            # Trigger content generation on button click
-            if generate_button:
-                st.session_state.generate_content = True
         else:
-            st.error("Please fill all the required fields to proceed.")
-            preferred_language = None
-            uploaded_files = None
-            additional_instructions = None
-            generate_button = None
+            st.error("Please fill out all required fields.")
 
-    # Initialize session state for content generation
-    if 'generate_content' not in st.session_state:
-        st.session_state.generate_content = False
-
-    # Generate content if the button is clicked
+    # Generate content based on the user's selections
     if st.session_state.generate_content:
         if learning_mode == "Lesson":
-            prompt = f"As an experienced educator, explain the reasoning behind the key concepts of '{topic}' to a {familiarity} level learner. Structure the explanation to ensure clarity within {st.session_state.time_available} minutes. Contextualize the content with real-world examples and guide the learner through the topic using relatable storytelling. Keep the learner motivated by highlighting practical applications. Finally, evaluate the learning process by recommending 2-3 free, high-quality online courses and relevant YouTube lectures with their links (Don't provide any dummy link that does not exist, provide links that really exist). Also suggest 1-2 projects for hands-on practice. Incorporate {additional_instructions} to further enhance the experience."
+            prompt = f"As an experienced educator, explain the reasoning behind the key concepts of '{topic}' to a {familiarity} level learner. Structure the explanation to ensure clarity within {st.session_state.time_available} minutes. Contextualize the content with real-world examples and guide the learner through the topic using relatable storytelling. Keep the learner motivated by highlighting practical applications. Finally, evaluate the learning process by recommending 2-3 free, high-quality online courses and relevant YouTube lectures with their links. Also suggest 1-2 projects for hands-on practice. Incorporate {additional_instructions} to further enhance the experience."
 
         elif learning_mode == "Quiz":
             prompt = f"As an experienced educator, assess the learner’s understanding of '{topic}' with a quiz designed for a {familiarity} level learner. Include multiple-choice, true/false, and short-answer questions. Provide detailed instructions and context for each question. Evaluate the learner's progress by giving immediate feedback on correct and incorrect answers. Ensure the quiz fits within {st.session_state.time_available} minutes, and integrate {additional_instructions} to make the assessment more tailored and effective."
@@ -277,11 +276,41 @@ def main():
         # Call the API using the prompt
         response = call_api(llm_manager, prompt, llm_info["select_expert"])
 
-        # Display the response
-        st.write(response)
+        # Store the generated content in session state
+        st.session_state.generated_content = response
 
         # Reset content generation flag
         st.session_state.generate_content = False
+
+    # Display the generated content if it exists
+    if st.session_state.generated_content:
+        st.markdown("### Generated Content")
+        st.write(st.session_state.generated_content)
+
+        # After content generation, allow the user to input doubts
+        st.markdown("### Have doubts? Ask your question below:")
+        user_doubt = st.text_input("Enter your doubt:")
+
+        # Button to submit the doubt
+        if st.button("Submit Doubt"):
+            if user_doubt:
+                # Prompt for model to answer the user's doubt
+                doubt_prompt = f"As an AI assistant, answer this question based on the previous content: '{user_doubt}'"
+                doubt_response = call_api(llm_manager, doubt_prompt, llm_info["select_expert"])
+
+                # Store the question and answer in session state
+                st.session_state.questions.append(user_doubt)
+                st.session_state.answers.append(doubt_response)
+            else:
+                st.error("Please enter a doubt before submitting.")
+
+    # Display the questions and answers in chat format
+    if st.session_state.questions:
+        st.markdown("### Chat History")
+        for i in range(len(st.session_state.questions)):
+            st.write(f"**You:** {st.session_state.questions[i]}")
+            st.write(f"**QuiZenius AI:** {st.session_state.answers[i]}")
+
 
 if __name__ == "__main__":
     main()
