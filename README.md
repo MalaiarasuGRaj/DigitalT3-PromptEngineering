@@ -53,7 +53,7 @@ QuiZenius AI is an intelligent learning platform that tailors educational conten
 
 4. **Run the Streamlit App:**
     ```bash
-    streamlit run app.py
+    streamlit run streamlit/app.py --browser.gatherUsageStats false
 
 5. **Access the Application:** The application will be available at http://localhost:8501.
 
